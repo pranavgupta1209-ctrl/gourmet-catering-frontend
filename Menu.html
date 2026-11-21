@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Seasonal menus and thoughtful catering for private dinners, corporate events and celebrations. Gourmet au Catering."
+   >
+    <title>Our seasonal menu | Gourmet au Catering</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="navbar wrap" aria-label="Main navigation">
+        <a class="brand" href="Index.html"
+          ><span class="brand-mark" aria-hidden="true">g.</span
+          ><span
+            >Gourmet au Catering<small
+              >GOOD FOOD. BEAUTIFUL GATHERINGS.</small
+            ></span
+          ></a
+        ><button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          Menu <span aria-hidden="true">&#9776;</span>
+        </button>
+        <div class="nav-links" id="navLinks">
+          <a href="Index.html">Home</a><a href="Index.html#about">Our story</a
+          ><a href="Menu.html">The menu</a
+          ><a class="button small" href="Contact.html"
+            >Plan your event <span aria-hidden="true">&nearr;</span></a
+          >
+        </div>
+      </nav>
+    </header>
+    <main id="main" class="wrap">
+      <section class="page-intro">
+        <p class="eyebrow">FRESH FROM OUR KITCHEN</p>
+        <h1>A table worth<br><em>gathering around.</em></h1>
+        <p>
+          Breakfast favourites and seasonal plates, prepared with care.<br>Find
+          something you love. Make it a gathering.
+        </p>
+      </section>
+      <div class="menu-layout">
+        <section aria-label="Catering menu">
+          <div class="menu-controls">
+            <label class="search-label" for="menuSearch"
+              >Search the menu<input
+                type="search"
+                id="menuSearch"
+                placeholder="Try waffles, berries, garden..."
+           ></label>
+            <div
+              class="category-filters"
+              id="categoryFilters"
+              role="group"
+              aria-label="Menu categories"
+            ></div>
+          </div>
+          <div class="result-bar">
+            <span id="menuCount" role="status">Loading our seasonal menu&hellip;</span
+            ><span>Prices in INR (&#8377;) &middot; per serving</span>
+          </div>
+          <p id="menuStatus" class="notice" role="status" hidden></p>
+          <button type="button" class="text-link" id="retryMenu" hidden>
+            Try loading the menu again &nearr;
+          </button>
+          <div class="food-grid menu-grid" id="menuGrid"></div>
+        </section>
+        <aside class="order-cart" id="orderCart" aria-labelledby="cartHeading">
+          <p class="eyebrow">A LITTLE OF WHAT YOU LOVE</p>
+          <h2 id="cartHeading">
+            Your table <span id="cartCount" class="count-badge">0</span>
+          </h2>
+          <div id="cartItems">
+            <p class="muted">
+              Your cart is empty. Add something delicious from the menu.
+            </p>
+          </div>
+          <div class="cart-total">
+            <span>Order total</span><strong id="cartTotal">&#8377;0.00</strong>
+          </div>
+          <form id="checkoutForm" class="checkout-form">
+            <fieldset id="checkoutDetails">
+              <legend>Your details</legend>
+              <label for="customerName">Your name
+                <input type="text" id="customerName" name="customerName"
+                  autocomplete="name" maxlength="100" required placeholder="Full name">
+              </label>
+              <label for="customerPhone">Contact number
+                <input type="tel" id="customerPhone" name="customerPhone"
+                  autocomplete="tel" inputmode="numeric" pattern="[0-9]{10}"
+                  minlength="10" maxlength="10" required
+                  aria-describedby="orderPhoneHelp" placeholder="10-digit phone number">
+              </label>
+              <p id="orderPhoneHelp" class="field-help">10 digits, without spaces or country code. Our team will use this to confirm your order.</p>
+            </fieldset>
+          <p class="fine-print">
+            A catering order request. No online payment is collected. Final
+            availability is confirmed by our team.
+          </p>
+          <button type="submit" class="button full" id="placeOrder" disabled>
+            Send order request &nearr;
+          </button>
+          </form>
+          <p id="orderMessage" role="status" class="form-message"></p>
+        </aside>
+      </div>
+      <section class="special-section">
+        <div>
+          <p class="eyebrow">A FRESH PICK</p>
+          <h2>Something <em>seasonal.</em></h2>
+          <p id="specialMessage" role="status">
+            Discover an available favourite from our current menu.
+          </p>
+        </div>
+        <button type="button" class="button secondary" id="specialButton">
+          Show today&rsquo;s special &nearr;
+        </button>
+      </section>
+      <section class="section recipes">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">IDEAS FOR YOUR OWN KITCHEN</p>
+            <h2>A little <em>inspiration.</em></h2>
+            <p>
+              Recipes from TheMealDB, for cooking at home. These are not part of
+              our catering menu.
+            </p>
+          </div>
+          <button type="button" class="text-link" id="loadRecipes">
+            Find recipe ideas &nearr;
+          </button>
+        </div>
+        <p id="recipeStatus" role="status"></p>
+        <div id="recipeGrid" class="food-grid"></div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <a class="footer-brand" href="Index.html"
+            >Gourmet au Catering<span class="accent">.</span></a
+          >
+          <p>
+            Seasonal food. Thoughtful service.<br>A little more joy around the
+            table.
+          </p>
+        </div>
+        <div>
+          <p class="eyebrow">COME GATHER WITH US</p>
+          <a href="Menu.html">Explore the menu &nearr;</a
+          ><a href="Contact.html">Plan a gathering &nearr;</a>
+        </div>
+        <div>
+          <p class="eyebrow">THE PROJECT</p>
+          <p>Made with care by<br>Pranav, Priya, Jyoti</p>
+          <a href="Admin.html">Staff sign in &nearr;</a>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <span>&copy; 2026 Gourmet au Catering</span
+        ><span>A university catering website project</span>
+      </div>
+    </footer>
+  </body>
+</html>
